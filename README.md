@@ -1,2 +1,2 @@
 # default
-Mage2 Default Theme
+AvoRed Default Theme

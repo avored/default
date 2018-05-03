@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
+@section('meta_title','My Wishlist List Account E commerce')
+@section('meta_description','My Wishlist List Account E commerce')
+
+
 @section('content')
-    <div class="container">
+
     <div class="row profile">
-        <div class="col-md-2">
+        <div class="col-md-3">
             @include('user.my-account.sidebar')
         </div>
-        <div class="col-10">
+        <div class="col-md-9">
             <div class="title">
                 <h4>My Wishlist</h4>
             </div>
@@ -42,12 +46,12 @@
                                             <img alt="{{ $wishlist->product->name }}"
                                                  class="img-responsive"
                                                  style="max-height: 75px"
-                                                 src="{{ asset('/img/default-product.jpg') }}"/>
+                                                 src="{{ asset('vendor/avored-default/images/default-product.jpg') }}"/>
                                         @endif
                                     </td>
                                     <td>
                                         <a class="btn btn-danger"
-                                           href="{{ route('wishlist.remove', $wishlist->product_id) }}">Remove from
+                                           href="{{ route('wishlist.remove', $wishlist->product->slug ) }}">Remove from
                                             Wishlist</a>
                                     </td>
                                 </tr>
@@ -59,6 +63,5 @@
 
             @endif
         </div>
-    </div>
     </div>
 @endsection
